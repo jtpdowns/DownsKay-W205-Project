@@ -1,0 +1,16 @@
+Steps for running:
+
+1.) Launch Instance
+2.) Attach storage volume to instance
+3.) Make folder for project
+4.) Place scripts in folder along with gsp_naics_all.csv"
+5.) Make sure hadoop and postgres are running
+6.) Switch to user w205 and navigate to project folder
+7.) Run download_data_create_data_lake.sh
+     ./download_data_create_data_lake.sh
+8.) Run make_hive_tables_ddl.sql
+     hive -f make_hive_tables_ddl.sql
+9.) Run transform
+     hive -f transform.sql
+10.) Run investigations
+     hive -f investigations.sql
